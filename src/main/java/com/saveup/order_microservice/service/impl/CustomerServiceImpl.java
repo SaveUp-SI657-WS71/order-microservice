@@ -19,4 +19,13 @@ public class CustomerServiceImpl {
                 .bodyToMono(CustomerDto.class)
                 .block();
     }
+
+    public CustomerDto getCustomerById(int customerId) {
+        return webClientBuilder.build()
+                .get()
+                .uri("http://192.168.56.1:8082/api/saveup/v1/customers/" + customerId)
+                .retrieve()
+                .bodyToMono(CustomerDto.class)
+                .block();
+    }
 }

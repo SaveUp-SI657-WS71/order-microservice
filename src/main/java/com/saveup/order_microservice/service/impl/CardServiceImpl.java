@@ -13,7 +13,7 @@ public class CardServiceImpl {
     public ProductDto getCardByCardNumberAndCustomerId(String cardNumber, int customerId) {
         return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8080/api/saveup/v1/cards/card/"+ cardNumber + "/customer/" + customerId)
+                .uri("http://192.168.56.1:8084/api/saveup/v1/cards/card/"+ cardNumber + "/customer/" + customerId)
                 .retrieve()
                 .bodyToMono(ProductDto.class)
                 .block();

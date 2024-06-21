@@ -13,7 +13,7 @@ public class ProductServiceImpl {
     public ProductDto getProductById(int productId) {
         return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8080/api/saveup/v1/products/" + productId)
+                .uri("http://192.168.98.136:8083/api/saveup/v1/products/" + productId)
                 .retrieve()
                 .bodyToMono(ProductDto.class)
                 .block();

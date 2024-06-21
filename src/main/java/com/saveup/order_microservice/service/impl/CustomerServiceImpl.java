@@ -14,7 +14,7 @@ public class CustomerServiceImpl {
     public CustomerDto getCustomerByNameAndLastNameAndPhoneNumber(String name, String lastName, String phoneNumber) {
         return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8080/api/saveup/v1/customers/name/"+ name + "/lastName/" + lastName + "/phoneNumber/" + phoneNumber)
+                .uri("http://192.168.56.1:8082/api/saveup/v1/customers/name/"+ name + "/lastName/" + lastName + "/phoneNumber/" + phoneNumber)
                 .retrieve()
                 .bodyToMono(CustomerDto.class)
                 .block();

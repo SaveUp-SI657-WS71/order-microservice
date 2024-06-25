@@ -13,5 +13,10 @@ public class CustomerDto {
     private String lastName;
     private String email;
     private int points;
+    private String address;
+    private String department;
+    private String district;
+    private String password;
+    private String repeatPassword;
     private String phoneNumber;
 }

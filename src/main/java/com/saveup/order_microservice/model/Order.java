@@ -1,5 +1,6 @@
 package com.saveup.order_microservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +11,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -20,13 +20,11 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "date", nullable = false)
+    @Column(name = "date", nullable = true)
     private LocalDate date;
 
-    @OneToOne(cascade = CascadeType.ALL)
+   @ManyToOne
     @JoinColumn(name = "pay_id", foreignKey = @ForeignKey(name = "FK_order_pay"))
     private Pay pay;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<Cart> carts;
 }

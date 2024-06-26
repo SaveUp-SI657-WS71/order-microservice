@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PayDto {
     private int id;
+    private int customerId;
     private String customerName;
     private String customerLastName;
     private String phoneNumber;

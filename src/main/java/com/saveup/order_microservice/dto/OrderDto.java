@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class OrderDto {
     private int id;
     private int payId;
+
 }

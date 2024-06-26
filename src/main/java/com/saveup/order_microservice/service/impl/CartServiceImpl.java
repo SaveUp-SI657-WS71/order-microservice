@@ -86,8 +86,9 @@ public class CartServiceImpl implements CartService {
                 "JOIN saveup.product p ON c.product_id = p.id " +
                 "WHERE c.order_id = ?;";
 
-        return jdbcTemplate.queryForList(query, orderId);
+        return jdbcTemplate.queryForList(query,orderId);
     }
+
 
 
     @Override
